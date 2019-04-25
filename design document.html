@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>DESIGN DOCUMENT</title>
+</head>
+<body>
+<script>
+ function func()
+ {
+   var p=document.getElementById("dname").value;
+   document.getElementById("aname").disabled=false;
+   
+   var m=document.getElementById("term");
+   if(m.checked)
+   {
+      document.getElementById("mycheck").disabled=false;
+   }
+   else
+   {
+     document.getElementById("mycheck").disabled=true;
+	} 
+ }
+ function login()
+ {
+   var area=document.getElementById("aname").value;
+   document.getElementById("pin").disabled=false;
+}	
+function fun()
+{
+document.getElementById("ano").disabled=false;
+}
+function fun1()
+{
+document.getElementById("pinno").disabled=false;
+}
+
+function func1()
+{
+  dono=document.getElementById("dname").value;
+  arno=document.getElementById("aname").value;
+  pino=document.getElementById("pin").value;
+  at=document.getElementById("ter");
+  if(at.checked)
+  {
+     document.getElementById("dno").value=dono;
+     document.getElementById("ano").value=arno;
+     document.getElementById("pinno").value=pino;
+	 document.getElementById("dno").disabled=true;
+	 document.getElementById("ano").disabled=true;
+	 document.getElementById("pinno").disabled=true;
+  }
+  else
+  {
+     document.getElementById("dno").value='';
+     document.getElementById("ano").value='';
+     document.getElementById("pinno").value='';
+     document.getElementById("dno").disabled=false;
+	 document.getElementById("ano").disabled=true;
+	 document.getElementById("pinno").disabled=true;
+  }
+}  
+	 
+  
+</script>
+<form>
+<center><b>First name</b><br>
+<center><input type="text" placeholder="enter firstname" name="name"required><br>
+<center><b>Last name</b><br>
+<center><input type="text" placeholder="enter lastname" name="name"><br> 
+<center><b>EmailID</b><br>
+<center><input type="email" placeholder="enter emailid" name="emailaddress"><br>
+<center><b>Password</b>
+<center><input type="password" placeholder="Enter password" name="psw" required>
+<center><input type="radio" id="v1" name="gender" value="male">male
+<center><input type="radio" id="v2" name="gender" value="female">female
+<center><b>Door number</b><br>
+<center><input type="text" id="dname" placeholder="Enter door number" name="number" onkeypress="func()" required><br>	
+<center><b>Area name</b><br>
+<center><input type="text" placeholder="Enter area name" id="aname" disabled onkeypress="login()" required><br>
+<center><b>Pincode</b><br>
+<center><input type="number" placeholder="Enter pincode" id="pin" disabled  name="pin" required><br>
+
+<input type="checkbox" id="ter" onclick="func1()">Same as permanent address<br><br>
+
+<center><b>Door number</b><br>
+<center><input type="text" id="dno" placeholder="Enter door number" name="number" onkeypress="fun()" required><br>	
+<center><b>Area name</b><br>
+<center><input type="text" placeholder="Enter area name" id="ano" disabled onkeypress="fun1()" required><br>
+<center><b>Pincode</b><br>
+<center><b>Upload your image</b><br>
+<input type="file" name="pic" accept="image/*"><br><br>
+<center><input type="number" placeholder="Enter pincode" id="pinno" disabled  name="pin" required><br>
+<input type="checkbox" id="term" onclick="func()">I agree upon the terms and conditions<br><br>
+<input type="button" id="mycheck" value="view" disabled>
+</form>
+</body>
+</html>	
+   
